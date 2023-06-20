@@ -7,8 +7,10 @@
 int main(void)
 {
 int Base10;
-for (Base10 = 0; Base10 < 10; Base10++)
-putchar((Base10 % 10) + '0');
+for (Base10 = '0'; Base10 <= '9'; Base10++)
+{
+putchar(Base10);
+}
 putchar('\n');
 return (0);
 }
