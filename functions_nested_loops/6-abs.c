@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
-  * _abs - prueba
-  * @int: prueba
+  * _abs - computes the absolute value of an integer
+  * @r: valor
   * Return: Always 0.
   */
 int _abs(int r)
