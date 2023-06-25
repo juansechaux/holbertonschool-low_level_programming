@@ -19,7 +19,7 @@ void print_triangle(int size)
 		{
 			for (colum = size - fila; colum > 1; colum--)
 			{
-				_putchar('.');
+				_putchar(' ');
 			}
 			for (esp = 0; esp <= fila; esp++)
 			{
