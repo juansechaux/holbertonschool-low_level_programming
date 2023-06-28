@@ -3,8 +3,7 @@
 
 /**
  * _atoi - Change the value of n troug a pointer src = dest[]
- *@dest: pointer to paste the copy
- *@src: pointer to copy
+ *@s: pointer to copy
  * Return: Always 0.
  */
 
