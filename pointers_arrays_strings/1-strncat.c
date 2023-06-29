@@ -27,7 +27,6 @@ char *_strncat(char *dest, char *src, int n)
 		id++;
 		is++;
 	}
-	
 
 	dest[id] = '\0';
 
