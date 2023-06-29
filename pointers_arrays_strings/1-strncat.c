@@ -20,11 +20,14 @@ char *_strncat(char *dest, char *src, int n)
 	{
 		id++;
 	}
-	for (is = 0; is < n; is++)
+
+	while (is < n && src[is] != '\0')
 	{
 		dest[id] = src[is];
 		id++;
+		is++;
 	}
+	
 
 	dest[id] = '\0';
 
