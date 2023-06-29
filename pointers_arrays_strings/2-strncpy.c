@@ -2,7 +2,7 @@
 #include"main.h"
 
 /**
- * _strncat - concatenate 2 strings whit n caracters
+ * _strncpy - concatenate 2 strings whit n caracters
  *@dest: string 1
  *@src: string 2
  *@n: numbers of caracters of the string 2
@@ -14,7 +14,7 @@ char *_strncpy(char *dest, char *src, int n)
 	int id;
 
 	id = 0;
-	
+
 	while (id < n && src[id] != '\0')
 	{
 		dest[id] = src[id];
@@ -28,6 +28,4 @@ char *_strncpy(char *dest, char *src, int n)
 
 	return (dest);
 }
-
-
 
