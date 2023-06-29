@@ -12,10 +12,18 @@
 char *_strncpy(char *dest, char *src, int n)
 {
 	int c;
-	    
+
 	for (c = 0; c < n; c++)
 	{
+		if (src[c] == '\0')
+		{
+			dest[c] = src[c];
+			break;
+		}
+		else
+		{
 		dest[c] = src[c];
+		}
 	}
 	return (dest);
 
