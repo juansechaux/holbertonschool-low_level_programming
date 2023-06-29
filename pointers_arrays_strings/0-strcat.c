@@ -2,8 +2,9 @@
 #include"main.h"
 
 /**
- * reset_to_98 - Change the value of n troug a pointer
- *@n: variable to change
+ * _strcat - concatenate 2 strings
+ *@dest: string 1
+ *@src: string 2
  * Return: Always 0.
  */
 
@@ -23,7 +24,7 @@ char *_strcat(char *dest, char *src)
 		dest[id] = src[is];
 		id++;
 	}
-	
+
 	dest[id] = '\0';
 
 	return (dest);
