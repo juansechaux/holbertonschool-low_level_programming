@@ -11,7 +11,9 @@ char *cap_string(char *p)
 {
 
 	int c, i, csow;
+
 	char sow[] = {32, '\t', '\n', 44, ';', 46, '!', '?', '"', '(', ')', 123, 125};
+
 	csow = 13;
 
 	while (p[c] != '\0')
