@@ -9,34 +9,29 @@
 
 char *leet(char *p)
 {
+	int a, b, f;
 
-	int c;
+	char l[5] = {'a', 'e', 'o', 't', 'l'};
+	char n[5] = {'4', '3', '0', '7', '1'};
 
-	c = 0;
+	a = 0;
+	b = 0;
+	f = 5;
 
-	while (p[c] != '\0')
+
+	while (p[a] != '\0')
 	{
-		if (p[c] == 'a' || p[c] == 'A')
+		b = 0;
+
+		while (b < f)
 		{
-			p[c] = '4';
+			if (p[a] == l[b] || p[a] + 32 == l[b])
+			{
+				p[a] = n[b];
+			}
+			b++;
 		}
-		else if (p[c] == 'e' || p[c] == 'E')
-		{
-			p[c] = '3';
-		}
-		else if (p[c] == 'o' || p[c] == 'O')
-		{
-			p[c] = '0';
-		}
-		else if (p[c] == 't' || p[c] == 'T')
-		{
-			p[c] = '7';
-		}
-		else if (p[c] == 'l' || p[c] == 'L')
-		{
-			p[c] = '1';
-		}
-		c++;
+		a++;
 	}
 	return (p);
 }
