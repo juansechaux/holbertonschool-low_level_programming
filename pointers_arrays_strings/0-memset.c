@@ -2,8 +2,10 @@
 #include"main.h"
 
 /**
- * reset_to_98 - Change the value of n troug a pointer
- *@n: variable to change
+ * _memset - funcion memset
+ *@s: pointer
+ *@b: char
+ *@n: number or times
  * Return: Always 0.
  */
 
