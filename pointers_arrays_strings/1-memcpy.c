@@ -4,7 +4,7 @@
 /**
  * _memcpy - funcion memset
  *@dest: pointer destination
- *@stc: pointer origin
+ *@src: pointer origin
  *@n: number in bytes to copy
  * Return: Always 0.
  */
