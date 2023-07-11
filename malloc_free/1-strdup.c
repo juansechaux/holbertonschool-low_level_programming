@@ -16,6 +16,11 @@ char *_strdup(char *str)
 
 	c = 0;
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
 	while (str[c] != '\0')
 	{
 		c++;
