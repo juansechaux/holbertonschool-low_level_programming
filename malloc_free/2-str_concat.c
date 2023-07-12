@@ -21,12 +21,12 @@ char *str_concat(char *s1, char *s2)
 	{
 		if (s2 == NULL)
 		{
-			return (NULL);
+			conca = malloc(sizeof(char) * 1);
+			conca[0] = '\0';
+			return (conca);
 		}
 		while (s2[c] != '\0')
-		{
 			c++;
-		}
 		conca = malloc(sizeof(char) * (c + 1));
 		x = 0;
 		while (x <= c)
@@ -39,9 +39,7 @@ char *str_concat(char *s1, char *s2)
 	else if (s2 == NULL)
 	{
 		while (s1[i] != '\0')
-		{
 			i++;
-		}
 		conca = malloc(sizeof(char) * (i + 1));
 		t = 0;
 		while (t <= i)
@@ -52,18 +50,12 @@ char *str_concat(char *s1, char *s2)
 		return (conca);
 	}
 	while (s1[i] != '\0')
-	{
 		i++;
-	}
 	while (s2[c] != '\0')
-	{
 		c++;
-	}
 	conca = malloc(sizeof(char) * (i + c + 1));
 	for (t = 0; t < i; t++)
-	{
 		conca[t] = s1[t];
-	}
 	x = 0;
 	while (t <= (i + c))
 	{
