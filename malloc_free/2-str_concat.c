@@ -11,58 +11,36 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int i, c, t, x;
+	int t, x, i = 0, c = 0;
 	char *conca;
 
-	i = 0;
-	c = 0;
-
 	if (s1 == NULL)
-	{
-		if (s2 == NULL)
-		{
-			conca = malloc(sizeof(char) * 1);
-			conca[0] = '\0';
-			return (conca);
-		}
-		while (s2[c] != '\0')
-			c++;
-		conca = malloc(sizeof(char) * (c + 1));
-		x = 0;
-		while (x <= c)
-		{
-			conca[x] = s2[x];
-			x++;
-		}
-		return (conca);
-	}
-	else if (s2 == NULL)
-	{
-		while (s1[i] != '\0')
-			i++;
-		conca = malloc(sizeof(char) * (i + 1));
-		t = 0;
-		while (t <= i)
-		{
-			conca[t] = s1[t];
-			t++;
-		}
-		return (conca);
-	}
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	while (s1[i] != '\0')
+	{
 		i++;
+	}
 	while (s2[c] != '\0')
+	{
 		c++;
+	}
 	conca = malloc(sizeof(char) * (i + c + 1));
+	if (conca == NULL)
+		return (NULL);
 	for (t = 0; t < i; t++)
+	{
 		conca[t] = s1[t];
+	}
 	x = 0;
-	while (t <= (i + c))
+	while (t < (i + c))
 	{
 		conca[t] = s2[x];
 		t++;
 		x++;
 	}
+	conca[t] = '\0';
 	return (conca);
 }
 
