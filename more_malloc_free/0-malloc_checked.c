@@ -3,9 +3,8 @@
 #include<stdlib.h>
 
 /**
- *create_array - funcion
- *@size: tamano del array
- *@c: caracter
+ *malloc_checked - funcion
+ *@b: int
  *Return: Always 0.
  */
 
