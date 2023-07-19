@@ -20,6 +20,12 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
+	if (get_op_func(argv[2]) == NULL)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
 	num1 = atoi(argv[1]);
 	operator = argv[2];
 	num2 = atoi(argv[3]);
@@ -28,11 +34,6 @@ int main(int argc, char *argv[])
 	{
 		printf("Error\n");
 		exit(100);
-	}
-	if (get_op_func(operator) == NULL)
-	{
-		printf("Error\n");
-		exit(99);
 	}
 
 	result = get_op_func(operator)(num1, num2);
