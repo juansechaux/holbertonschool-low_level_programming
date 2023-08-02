@@ -2,10 +2,10 @@
 
 
 /**
- * add_node - This is the function that prints all the elements of a list
- * @head: pointer
+ * add_node - function that adds a new node at the beginning of a list
+ *@head: points to head of the nodes
  *@str: string
- * Return: the numbers of nodes
+ * Return: the address of the new element, or NULL if it failed
  */
 
 
