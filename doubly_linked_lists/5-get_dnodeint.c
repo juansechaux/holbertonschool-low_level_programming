@@ -10,7 +10,7 @@
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	unsigned int i = 0;
-	const dlistint_t *current = head;
+	dlistint_t *current = head;
 
 	while (current != NULL && i < index)
 	{
