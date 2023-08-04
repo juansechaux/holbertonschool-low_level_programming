@@ -1,6 +1,28 @@
 #include "lists.h"
 
 /**
+ * crea_node - creates new node
+ * @n: data of node
+ * @prev: link to prev node
+ * @next: link to next node
+ * Return: pointer to new node
+ */
+
+dlistint_t *crea_node(int n, dlistint_t *prev, dlistint_t *next)
+{
+	dlistint_t *newN;
+
+	newN = malloc(sizeof(dlistint_t));
+	if (newN == NULL)
+		return (NULL);
+	newN->n = n;
+	newN->prev = prev;
+	newN->next = next;
+	return (newN);
+}
+
+
+/**
  * insert_dnodeint_at_index - func that inserts a new node at a given position
  * @h: pointer to the header of the nodes
  * @idx: the index of the list where the new node should be added
@@ -10,56 +32,39 @@
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	unsigned int size;
-	unsigned int x = 0;
+	dlistint_t *curr = *h, *temp = NULL;
+	unsigned int count = 0;
 
-	dlistint_t *temp2;
-	size_t i = 0;
-	const dlistint_t *actual = *h;
-
-	while (actual != NULL)
-	{
-		actual = actual->next;
-		i++;
-	}
-	size = i;
-
-	if (idx < x || size < idx)
-	{
+	if (!h)
 		return (NULL);
-	}
 	if (idx == 0)
 	{
-		add_dnodeint(h, n);
-		return (*h);
-	}
-	else if (idx == size)
-	{
-		add_dnodeint_end(h, n);
-		return (*h);
-	}
-	else
-	{
-		dlistint_t *temp = *h;
-		dlistint_t *newNode = (dlistint_t *)malloc(sizeof(dlistint_t));
-
-		if (!newNode)
+		if (!*h)
+			*h = crea_node(n, NULL, NULL);
+		else
 		{
-			return (NULL);
+			(*h)->prev = crea_node(n, NULL, *h);
+			*h = (*h)->prev;
 		}
-		newNode->n = n;
-		newNode->next = NULL;
-		while (idx)
-		{
-			temp = temp->next;
-			idx--;
-		}
-		temp2 = temp->next;
-		newNode->next = temp->next;
-		newNode->prev = temp;
-		temp->next = newNode;
-		temp2->prev = newNode;
 		return (*h);
 	}
+	for (curr = *h; curr && (count < idx); curr = curr->next, count++)
+	{
+		temp = curr;
+	}
+	if ((count == idx) && (curr == NULL))
+	{
+		temp->next = crea_node(n, temp, NULL);
+		return (temp->next);
+	}
+	if ((count < idx) && (curr == NULL))
+		return (NULL);
+	if (temp != NULL)
+	{
+		temp->next = crea_node(n, temp, curr);
+		curr->prev = temp->next;
+		return (temp->next);
+	}
+	return (NULL);
 }
 
