@@ -14,13 +14,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int x = 0;
 	dlistint_t *temp2;
 	dlistint_t *temp = *h;
+	size_t i = 0;
+	const dlistint_t *actual = *h;
+
 	dlistint_t *newNode = malloc(sizeof(dlistint_t));
 
 	if (newNode == NULL)
 		return (NULL);
-
-	size_t i = 0;
-	const dlistint_t *actual = *h;
 
 	while (actual != NULL)
 	{
