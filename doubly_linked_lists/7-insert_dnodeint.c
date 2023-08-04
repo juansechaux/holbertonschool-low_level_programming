@@ -15,7 +15,15 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	dlistint_t *temp2;
 
-	size = dlistint_len(*h);
+	size_t i = 0;
+	const dlistint_t *actual = *h;
+
+	while (actual != NULL)
+	{
+		actual = actual->next;
+		i++;
+	}
+	size = i;
 
 	if (idx < x || size < idx)
 	{
