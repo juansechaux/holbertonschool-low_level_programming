@@ -6,6 +6,26 @@
  *@argv: files
  *Return: Always 0
  */
+int ret_error_close(int fd)
+{
+	int c;
+
+	c = close(fd);
+
+	if (c == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", close(fd));
+		exit(100);
+	}
+	return(c);
+}
+
+/**
+ *main - main function
+ *@argc: arguments
+ *@argv: files
+ *Return: Always 0
+ */
 
 int main(int argc, char *argv[])
 {
@@ -44,16 +64,10 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	if (close(fd1) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", close(fd1));
-		exit(100);
-	}
-	if (close(fd2) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", close(fd2));
-		exit(100);
-	}
+	ret_error_close(fd1);
+	ret_error_close(fd2);
+
 	return (0);
 
 }
+
