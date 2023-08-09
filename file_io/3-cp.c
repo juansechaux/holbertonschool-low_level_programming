@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- *main - main function
- *@argc: arguments
- *@argv: files
+ *ret_error_close - error function of close
+ *@fd: file
  *Return: Always 0
  */
 int ret_error_close(int fd)
@@ -17,7 +16,7 @@ int ret_error_close(int fd)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", close(fd));
 		exit(100);
 	}
-	return(c);
+	return (c);
 }
 
 /**
