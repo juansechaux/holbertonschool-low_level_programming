@@ -10,12 +10,15 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index = (hash_djb2(key) % ht->size);
+	unsigned long int index = hash_djb2((const unsigned char *)key) % ht->size;
 
 	hash_node_t *new_node = malloc(sizeof(hash_node_t));
 
-	new_node->key = key;
-	new_node->value = value;
+	if (new_node == NULL)
+		return (1);
+
+	new_node->key = (char *)key;
+	new_node->value = (char *)value;
 	new_node->next = NULL;
 
 	/*Agrega el nodo a la tabla hash (manejando colisiones si es necesario*/
