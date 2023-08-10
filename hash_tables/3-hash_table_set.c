@@ -29,6 +29,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = new_node;
 		return (1);
 	}
+	else if (ht->array[index]->key == key)
+	{
+		ht->array[index] = new_node;
+		return (1);
+	}
 	else
 	{
 		/* Manejar colisiones (por ej, agreg al princi de una lista enlazada)*/
