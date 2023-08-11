@@ -29,17 +29,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = new_node;
 		return (1);
 	}
-	else if (ht->array[index]->key == key)
-	{
-		ht->array[index] = new_node;
-		return (1);
-	}
 	else
 	{
-		/* Manejar colisiones (por ej, agreg al princi de una lista enlazada)*/
-		new_node->next = ht->array[index];
-		ht->array[index] = new_node;
-		return (1);
+		hash_node_t *current = ht->array[index];
+		while (current->next != NULL)
+		{
+			current = current->next;
+		}
+		current->next = new_node;
 	}
+	return (1);
 }
 
