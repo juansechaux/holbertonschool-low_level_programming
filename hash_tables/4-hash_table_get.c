@@ -14,13 +14,13 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int index;
 	hash_node_t *current;
 
+	if (ht == NULL)
+		return (NULL);
+
 	hash = hash_djb2((const unsigned char *)key);
 	size = ht->size;
 	index = hash % size;
 	current = ht->array[index];
-
-	if (ht == NULL)
-		return (NULL);
 
 	while (current != NULL)
 	{
