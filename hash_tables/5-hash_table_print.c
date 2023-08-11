@@ -12,6 +12,8 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *p;
 	char n;
 
+	n = 0;
+
 	if (ht == NULL)
 		return;
 
@@ -19,7 +21,6 @@ void hash_table_print(const hash_table_t *ht)
 	for (i = 0; ht && i < ht->size; i++)
 	{
 		p = ht->array[i];
-		n = 0;
 		while (p)
 		{
 			if (n)
